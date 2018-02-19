@@ -8,7 +8,9 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from './components/App';
 import SongCreate from './components/SongCreate';
 import SongDetails from './components/SongDetails';
-const client = new AppoloClient({});
+const client = new AppoloClient({
+  dataIdFromObject: o=>o.id
+});
 const Root = () => {
   return (
     <ApolloProvider client={client}>
